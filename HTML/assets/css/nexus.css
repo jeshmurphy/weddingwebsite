@@ -2794,3 +2794,9 @@ ul.posts-list li {
   min-height: 40px;
   text-align: center;
 }
+
+.our-story-el {
+  margin: auto; 
+  width: 50%; 
+  padding: 10px;
+}
