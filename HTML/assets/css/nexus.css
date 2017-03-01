@@ -19,7 +19,7 @@ TABLE OF CONTENTS
 	- Testimonials
 	- Accordions
 	- Tabs
-	- Progress Bars 
+	- Progress Bars
 	- Panels
 	- Social Icons
 	- Carousel
@@ -37,7 +37,7 @@ html {
 body {
   line-height: 1.7em;
   font-family: PT Sans;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 300;
   background-color: #5f807a;
   background-color: #F4F1EA;
@@ -1030,7 +1030,7 @@ h1.logo-text a {
 .slicknav_menu {
   *zoom: 1;
 }
-/* 
+/*
     User Default Style
     Change the following styles to modify the appearance of the menu.
 */
@@ -2796,7 +2796,7 @@ ul.posts-list li {
 }
 
 .our-story-el {
-  margin: auto; 
-  width: 50%; 
+  margin: auto;
+  width: 50%;
   padding: 10px;
 }
