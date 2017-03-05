@@ -28,6 +28,7 @@
         <link href="http://fonts.googleapis.com/css?family=PT+Sans" type="text/css" rel="stylesheet">
         <link href="http://fonts.googleapis.com/css?family=Roboto:400,300" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="assets/js/instafeed.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
     <body>
   <script type="text/javascript">
@@ -39,10 +40,30 @@
   resolution: 'standard_resolution',
   template: '  <div class="col-md-4 portfolio-item margin-bottom-40 video"><div><a href="{{link}}" target="_blank"><figure><img src="{{image}}" alt="image1"></figure></a></div></div>',
   filter: function(image) {
-    return image.tags.indexOf('nyc') >= 0; //CHANGE TO WEDDING TAG
+    return image.tags.indexOf('jesandjoe2017') >= 0; //CHANGE TO WEDDING TAG
   }
 });
-feed.run();
+//feed.run();
+ function dosomethingwiththis(z) {
+    $(document).ready(function() {
+        if (z !== null)
+            document.getElementById('public_instafeed').innerHTML = z;
+    });
+}
+
+$.getJSON({
+  url: "/instagramtest.php",
+  beforeSend: function( xhr ) {
+    xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+  }
+})
+.done(function( data ) {
+    var pub_ig_html = '';
+    $.each(data, function(index) {
+       pub_ig_html += '<div class="col-md-4 portfolio-item margin-bottom-40 video"><div><a href="https://www.instagram.com/p/'+index+'" target="_blank"><figure><img src="'+data[index]+'" alt="image1"></figure></a></div></div>';
+        if (data[index] !== null) dosomethingwiththis(pub_ig_html);
+    });
+});
 </script>
 <div class="content-body">
     <body>
@@ -89,10 +110,10 @@ feed.run();
                                 <li>
                                     <a href="photos.html" >Photos</a>
                                 </li>
-                             
+
                                     <li>
-                                    <a href="blog-pre.html">Blog</a>                                  
-                                </li> 
+                                    <a href="blog-pre.html">Blog</a>
+                                </li>
                                 <li>
                                     <a href="registry.html" >Registry</a>
                                 </li>
@@ -123,8 +144,9 @@ feed.run();
 
     <ul class="grid effect-2" id="grid">
         <div id="instafeed"> </div>
+        <div id="public_instafeed"> z</div>
     </div>
-                            
+
                         </div>
                     </div>
                 </div>
